@@ -6,6 +6,7 @@ def format_weather(data: dict) -> dict:
     return {
         "city": data["name"],
         "temperature": data["main"]["temp"],
+        "feels_like": data["main"]["feels_like"],
         "min_temp": data["main"]["temp_min"],
         "max_temp": data["main"]["temp_max"],
         "description": data["weather"][0]["description"],
@@ -28,3 +29,5 @@ def get_weather(city : str,  unit : str = UNITS, language : str = LANGUAGE) -> d
         return None
     except requests.RequestException:
         return None
+
+print(get_weather("madrid"))
