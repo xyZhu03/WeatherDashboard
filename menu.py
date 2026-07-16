@@ -9,7 +9,7 @@ def search_weather()-> None:
     weather = get_weather(city)
 
     if weather is None:
-        print("\nCity not found or connection error.\n")
+        print("\nCiudad no encotrada.\n")
         return
 
     print("=" * 20, " Weather ", "=" * 20)
@@ -22,16 +22,14 @@ def search_weather()-> None:
     print("=" * 49)
 
 def show_menu() -> None:
-    print("\n" + "=" * 35)
+    print("\n" * 2 + "=" * 35)
     print("       WEATHER DASHBOARD")
     print("=" * 35)
     print("1. Search weather")
     print("2. Show history")
-    print("3. Exit")
+    print("\nesc. Exit")
     print("=" * 35, "\n")
 
-def exit_program()-> bool:
-    return True
 
-commands =  {"1" : search_weather, "2" : show_menu, "3" : exit_program}
+commands =  {"1" : search_weather, "2" : show_menu}
 

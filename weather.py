@@ -29,5 +29,3 @@ def get_weather(city : str,  unit : str = UNITS, language : str = LANGUAGE) -> d
         return None
     except requests.RequestException:
         return None
-
-print(get_weather("madrid"))
