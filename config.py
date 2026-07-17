@@ -5,3 +5,5 @@ BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 UNITS = "metric"
 
 LANGUAGE = "es"
+
+PATH_CSV = "repositorio.csv"

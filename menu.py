@@ -1,7 +1,6 @@
-import sys
-
 from weather import get_weather
-
+from historial import agregar_al_csv, leer_archivo
+from config import PATH_CSV
 
 def search_weather()-> None:
     city = input("Introduzca la ciudad: ").strip()
@@ -12,6 +11,7 @@ def search_weather()-> None:
         print("\nCiudad no encotrada.\n")
         return
 
+    agregar_al_csv(PATH_CSV, weather)
     print("=" * 20, " Weather ", "=" * 20)
     print(f"City        : {weather['city']}")
     print(f"Temperature : {weather['temperature']} °C")
@@ -30,6 +30,10 @@ def show_menu() -> None:
     print("\nesc. Exit")
     print("=" * 35, "\n")
 
+def show_historial() -> None:
+    datos = leer_archivo(PATH_CSV)
+    for fila in datos:
+        print(fila)
 
-commands =  {"1" : search_weather, "2" : show_menu}
+commands =  {"1" : search_weather, "2" : show_historial}
 
